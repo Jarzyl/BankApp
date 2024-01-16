@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+//TODO: 
+1. Możliwość rejestracji
+2. Możliwość logowania, autoryzacji
+3. Możliwość wylogowania
+4. Interfejs do logowania / rejestracji
+5. Interfejs strony startowej banku (nasze konto)
+6. Możliwość otrzymywania środków
+7. Posiadanie nr konta oraz środków na nim
+8. Możliwość wykonywania przelewów
+9. Możliwość otrzymywania przelewów

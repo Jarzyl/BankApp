@@ -1,0 +1,50 @@
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column; // Dodaj flex-direction: column dla urządzeń mobilnych
+
+      li {
+        margin-bottom: 10px; // Dodaj margines między elementami dla urządzeń mobilnych
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      // Dodaj style dla większych ekranów
+      .nav-list {
+        flex-direction: row; // Dla większych ekranów wracamy do flex-direction: row
+        margin: 0;
+
+        li {
+          margin-right: 20px; // Powrót do marginesu dla większych ekranów
+          margin-bottom: 0; // Usuń margines dla większych ekranów
+        }
+      }
+    }
+  }
+}

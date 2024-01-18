@@ -1,5 +1,6 @@
 ﻿using BankApp.API.Data;
 using BankApp.API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BankApp.API.Controllers;
 
+[Authorize]
 public class UsersController: BaseApiController
 {
     private readonly DataContext _context;
@@ -15,7 +17,7 @@ public class UsersController: BaseApiController
     {
         _context = context;
     }
-
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {

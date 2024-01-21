@@ -2,6 +2,15 @@
   background-color: #333;
   color: white;
   padding: 10px 0;
+  
+
+  .login-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  
 
   .navbar-container {
     display: flex;
@@ -48,3 +57,23 @@
     }
   }
 }
+
+::ng-deep .mat-mdc-menu-content {
+  background-color: lightblue;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 150px;
+  
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  margin-left: 100rem;
+  margin-top: -28rem;
+  /* top: -28rem; */
+  justify-content: center;
+  display: flex;
+  position: absolute !important;
+  transform-origin: 0% !important;
+}
+

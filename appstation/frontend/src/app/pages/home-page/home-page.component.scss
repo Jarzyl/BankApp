@@ -1,0 +1,29 @@
+.container-home {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    // max-width: 1400px;
+    // margin: 0 auto;
+
+    .welcome-text {
+        font-size: 4rem;
+        color: greenyellow;
+        font-weight: 500;
+    }
+
+    
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    button {
+      color: #333;
+      text-decoration: underline;
+    }
+  }

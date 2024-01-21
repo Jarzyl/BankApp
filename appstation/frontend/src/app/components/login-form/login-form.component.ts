@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -7,20 +8,28 @@ import { AccountService } from 'src/app/services/account.service';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
+  @Input() registerToggle: (() => void) | any;
 
     public model: any = {};
-    public loggedIn: boolean = false;
+    
 
-    constructor(private accountService: AccountService) {}
+    constructor(private accountService: AccountService, private router: Router) {}
 
     public login() {
-      this.accountService.login(this.model).subscribe({
-      next: response => {
-        console.log(response);
-        this.loggedIn = true;
-      },
+      this.accountService.logIn(this.model).subscribe({
+      next: () => this.router.navigateByUrl("/finance"),
       error: error => console.log(error)
-      })
-      // console.log(this.model)
+      });
+    }
+
+    public logout() {
+        // this.accountService.loggedIn = false;
+    }
+
+    onClick() {
+      if (this.registerToggle) {
+        this.registerToggle();
+        console.log("ess")
+      }
     }
 }

@@ -1,3 +1,11 @@
-* {
+body {
     margin: 0;
 }
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.active {
+    color: #007bff; /* dowolny kolor podświetlenia */
+    font-weight: bold; /* dowolne stylizacje podświetlenia */
+  }

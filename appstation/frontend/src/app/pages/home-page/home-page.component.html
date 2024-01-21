@@ -1,0 +1,20 @@
+
+<div class="container-home">
+    <p class="welcome-text">Welcome on your BankApp website! </p>
+
+<div *ngIf="!registerMode">
+    <app-login-form [registerToggle]="registerToggleFunction"></app-login-form>
+    <div class="register-link">
+        <p>Don't have an account yet? <button (click)="registerToggleFunction()">Go to register</button></p>
+    </div>
+</div>
+<div *ngIf="registerMode">
+    <app-register-form (closeRegisterForm)="closeRegisterMode($event)"></app-register-form>
+</div>
+</div>
+
+<!-- <ul>
+    <li *ngFor="let user of users">
+        {{user.id}} + {{user.userName}}
+    </li>
+</ul> -->

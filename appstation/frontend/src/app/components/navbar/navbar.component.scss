@@ -64,12 +64,12 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   min-width: 150px;
-  
+  z-index: 100;
 }
 
 ::ng-deep .mat-mdc-menu-panel {
   margin-left: 100rem;
-  margin-top: -28rem;
+  margin-top: -8rem !important;
   /* top: -28rem; */
   justify-content: center;
   display: flex;

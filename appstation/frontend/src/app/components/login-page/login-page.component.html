@@ -1,5 +1,8 @@
-
-<app-login-form></app-login-form>
+<h1 class="title">Welcome on the login Page!</h1>
+<app-login-form [registerToggle]="registerToggleFunction"></app-login-form>
+    <div class="register-link">
+        <p>Don't have an account yet? <button (click)="registerToggleFunction()"><a href="/register">Go to register</a></button></p>
+    </div>
 
 
 

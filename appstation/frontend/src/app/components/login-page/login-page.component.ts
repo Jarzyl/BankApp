@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class LoginPageComponent {
 
+  registerMode = false;
+
+  public registerToggleFunction() {
+    this.registerMode = true;
+    console.log(this.registerMode)
+  }
+
+  public closeRegisterMode(event: boolean) {
+    this.registerMode = event;
+  }
 }

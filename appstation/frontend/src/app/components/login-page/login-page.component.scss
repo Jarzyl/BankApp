@@ -1,0 +1,18 @@
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    button {
+      color: #333;
+      text-decoration: underline;
+    }
+  }

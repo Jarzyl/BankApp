@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 1400px;
+    margin-top: 2rem;
+
+    .error {
+        font-size: 2rem;
+        color: red;
+    }
+
+    .following {
+        font-weight: bold;
+    }
+}

@@ -23,6 +23,11 @@ export class NavbarComponent implements OnInit {
   editProfile() {
     // Logika dla edycji profilu
     console.log('Edit your profile');
+    this.router.navigateByUrl("data")
+  }
+
+  visitDashboard() {
+    this.router.navigateByUrl("dashboard")
   }
 
   // getCurrentUser() {
@@ -36,5 +41,10 @@ export class NavbarComponent implements OnInit {
     this.accountService.logOut();
     console.log('Logout');
     this.router.navigateByUrl("/")
+  }
+
+  login() {
+    console.log('Login');
+    this.router.navigateByUrl("login")
   }
 }

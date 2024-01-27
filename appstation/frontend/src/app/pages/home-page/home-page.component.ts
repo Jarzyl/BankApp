@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../services/account.service';
 import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +12,7 @@ import { User } from '../../models/user';
 export class HomePageComponent implements OnInit {
   users: any;
 
-  constructor(private http: HttpClient, private accountService: AccountService) {}
+  constructor(private http: HttpClient, private accountService: AccountService, private router: Router) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -42,5 +43,13 @@ export class HomePageComponent implements OnInit {
 
   public closeRegisterMode(event: boolean) {
     this.registerMode = event;
+  }
+
+  goToLogin() {
+    this.router.navigateByUrl("login")
+  }
+
+  goToRegister(){
+    this.router.navigateByUrl("register")
   }
 }

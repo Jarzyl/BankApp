@@ -1,0 +1,9 @@
+<div [class]="getStyleClass()">
+    <div class="toast-content">
+        <mat-icon class="icon">{{ getIconType() }}</mat-icon>
+        <p>{{ getMessage() }}</p>
+        <button *ngIf="showCloseButton()">
+            <mat-icon (click)="closeWarning()">close</mat-icon>
+        </button>
+    </div>
+</div>

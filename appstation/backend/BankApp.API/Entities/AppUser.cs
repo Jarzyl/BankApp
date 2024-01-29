@@ -1,25 +1,25 @@
-using BankApp.API.Extensions;
 using System;
 using System.Collections.Generic;
 
-namespace BankApp.API.Entities;
-
-public class AppUser
+namespace BankApp.API.Entities
 {
-    public int Id { get; set; }
-    public string UserName { get; set; }
-    public string LastName { get; set; }
-    public byte[] PasswordHash { get; set; }
-    public byte[] PasswordSalt { get; set; }
-    public DateOnly DateOfBirth { get; set; }
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public decimal AccountBalance { get; set; }
-    public string City { get; set; }
-    public string Country { get; set; }
-    public string Gender { get; set; }
-    public byte[] ProfileImage { get; set; }
-    public string PhoneNumber { get; set; }
-    public string PostalCode { get; set; }
-    public string Email { get; set; }
-    public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    public class AppUser
+    {
+        public int Id { get; set; }
+        public string UserName { get; set; }
+        public string LastName { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
+        public DateOnly DateOfBirth { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public decimal AccountBalance { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string Gender { get; set; }
+        public byte[] ProfileImage { get; set; }
+        public string PhoneNumber { get; set; }
+        public string PostalCode { get; set; }
+        public string Email { get; set; }
+        public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    }
 }

@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using BankApp.API.Data;
 using BankApp.API.DTOs;
-using BankApp.API.Entities;
 using BankApp.API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

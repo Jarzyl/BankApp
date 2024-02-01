@@ -1,0 +1,59 @@
+.dashboard-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1400px;
+
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: black;
+  }
+
+  .account-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .text {
+    font-size: 2rem;
+    color: green;
+  }
+}
+
+.transactions-container {
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 700px;
+
+  .transaction-title {
+    padding: 0.5rem 1rem;
+  }
+
+  .transaction-header {
+    display: flex;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+
+    .header-item {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  .transaction-item {
+    display: flex;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+
+    .item {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}

@@ -10,8 +10,6 @@ import { SnackBarService } from 'src/app/services/snack-bar.service';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
-  @Input() registerToggle: (() => void) | any;
-
     public model: any = {};
     
 
@@ -28,14 +26,6 @@ export class LoginFormComponent {
       });
     }
 
-    public logout() {
-        // this.accountService.loggedIn = false;
-    }
-
     onClick() {
-      if (this.registerToggle) {
-        this.registerToggle();
-        console.log("ess")
-      }
     }
 }

@@ -10,10 +10,13 @@ import { TestErrorComponent } from './components/test-error/test-error.component
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { DefaultRouteGuard } from './guards/default-route.guard';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
+  // {path: '', component: HomePageComponent},
+  { path: '', component: HomePageComponent, canActivate: [DefaultRouteGuard] },
   {path: 'login', component: LoginPageComponent},
+  {path: 'home', component: HomePageComponent},
   {path: 'register', component: RegisterPageComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},

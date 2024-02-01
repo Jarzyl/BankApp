@@ -1,16 +1,87 @@
 .navbar {
-  background-color: #333;
+  background-color: #464444;
   color: white;
-  padding: 10px 0;
-  
+  padding: 20px;
 
   .login-icon {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
+
+
+    .welcome-container {
+      display: flex;
+      background-color: white;
+      width: fit-content;
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+      height: 35px;
+      border: none;
+      border-radius: 0.8rem;
+      gap: 0.5rem;
+      align-items: center;
+
+      .welcome-user {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      mat-icon {
+        color: black;
+        font-size: 1.5rem;
+      }
+    }
+
+    .buttons-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-btn-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(35, 34, 34);
+      border: none;
+      border-radius: 0.8rem;
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+      height: 35px;
+      width: 6rem;
+      cursor: pointer;
+
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+      }
+    }
+
+    .nav-btn-sign {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border: none;
+      border-radius: 0.8rem;
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+      height: 35px;
+      width: 6rem;
+      cursor: pointer;
+
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+      }
+    }
   }
-  
 
   .navbar-container {
     display: flex;
@@ -26,10 +97,10 @@
     .nav-list {
       list-style: none;
       display: flex;
-      flex-direction: column; // Dodaj flex-direction: column dla urządzeń mobilnych
+      flex-direction: column;
 
       li {
-        margin-bottom: 10px; // Dodaj margines między elementami dla urządzeń mobilnych
+        margin-bottom: 10px;
 
         a {
           text-decoration: none;
@@ -44,14 +115,13 @@
     }
 
     @media (min-width: 768px) {
-      // Dodaj style dla większych ekranów
       .nav-list {
-        flex-direction: row; // Dla większych ekranów wracamy do flex-direction: row
+        flex-direction: row;
         margin: 0;
 
         li {
-          margin-right: 20px; // Powrót do marginesu dla większych ekranów
-          margin-bottom: 0; // Usuń margines dla większych ekranów
+          margin-right: 20px;
+          margin-bottom: 0;
         }
       }
     }
@@ -70,10 +140,33 @@
 ::ng-deep .mat-mdc-menu-panel {
   margin-left: 100rem;
   margin-top: -8rem !important;
-  /* top: -28rem; */
   justify-content: center;
   display: flex;
   position: absolute !important;
   transform-origin: 0% !important;
 }
 
+.menu-content {
+  position: absolute;
+  top: 6%;
+  right: 5rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1;
+}
+
+.menu-content button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.menu-content button:hover {
+  background-color: #f0f0f0;
+}

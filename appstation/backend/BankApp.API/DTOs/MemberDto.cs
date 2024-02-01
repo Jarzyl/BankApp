@@ -10,6 +10,7 @@ namespace BankApp.API.DTOs
         public string LastName { get; set; }
         public int Age { get; set; }
         public DateTime CreatedAt { get; set; }
+        public decimal AccountBalance { get; set; }
         public string Gender { get; set; }
         public string City { get; set; }
         public string Country { get; set; }

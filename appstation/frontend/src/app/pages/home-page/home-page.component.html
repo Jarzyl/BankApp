@@ -1,26 +1,11 @@
-
 <div class="container-home">
-    <p class="welcome-text">Welcome on your BankApp website! </p>
-
-<!-- <div *ngIf="!registerMode">
-    <app-login-form [registerToggle]="registerToggleFunction"></app-login-form>
-    <div class="register-link">
-        <p>Don't have an account yet? <button (click)="registerToggleFunction()">Go to register</button></p>
-    </div>
-</div> -->
-
-<div class="button-container">
-    <button (click)="goToLogin"><a routerLink="login">Have account? Go to Login</a></button>
-    <button (click)="goToRegister"><a routerLink="register">New user? Create an account</a></button>
-    
+  <p class="welcome-text">Welcome on your BankApp website!</p>
+  <div class="button-container" *ngIf="!(accountService.currentUser$ | async)">
+    <button (click)="(goToLogin)">
+      <a routerLink="login">Have account? Go to Login</a>
+    </button>
+    <button (click)="(goToRegister)">
+      <a routerLink="register">New user? Create an account</a>
+    </button>
+  </div>
 </div>
-<!-- <div *ngIf="registerMode">
-    <app-register-form (closeRegisterForm)="closeRegisterMode($event)"></app-register-form>
-</div> -->
-</div>
-
-<!-- <ul>
-    <li *ngFor="let user of users">
-        {{user.id}} + {{user.userName}}
-    </li>
-</ul> -->

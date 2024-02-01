@@ -1,2 +1,38 @@
 <!-- <app-navbar></app-navbar> -->
-<p>Dashboard works</p>
+<div class="prograss-bar-wrapper">
+  <span [hidden]="!isLoading">
+    <mat-progress-bar
+      class="blue-progress-bar"
+      color="primary"
+      mode="indeterminate"
+    ></mat-progress-bar>
+  </span>
+</div>
+<div class="dashboard-container">
+  <p class="title">Dashboard</p>
+  <div *ngIf="bankClient">
+    <div class="account-container">
+      <span class="text">Your account balance:</span>
+      <span class="text">{{ bankClient.accountBalance }} $</span>
+    </div>
+    <div class="transactions-container">
+      <h2 class="transaction-title">Transaction History</h2>
+      <div class="transaction-header">
+        <div class="header-item">Transaction ID</div>
+        <div class="header-item">Amount</div>
+        <div class="header-item">Type</div>
+        <div class="header-item">Date</div>
+      </div>
+
+      <div
+        class="transaction-item"
+        *ngFor="let transaction of bankClient?.transactions"
+      >
+        <div class="item">{{ transaction.transactionId }}</div>
+        <div class="item">{{ transaction.amount }}</div>
+        <div class="item">{{ transaction.type }}</div>
+        <div class="item">{{ transaction.date | date }}</div>
+      </div>
+    </div>
+  </div>
+</div>

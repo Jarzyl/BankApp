@@ -1,13 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, map } from "rxjs";
-import { User } from "../models/user";
+import { User } from "../models/interfaces/user";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
 })
 export class AccountService {
-  public baseUrl = "https://localhost:5001/api/";
+  public baseUrl = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) {}
 

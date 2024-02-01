@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../services/account.service';
-import { User } from '../../models/user';
+import { User } from '../../models/interfaces/user';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,19 +12,10 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
   users: any;
 
-  constructor(private http: HttpClient, private accountService: AccountService, private router: Router) {}
+  constructor(private http: HttpClient, public accountService: AccountService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getUsers();
     this.setCurrentUser();
-  }
-
-  public getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe({
-      next: (response) => (this.users = response),
-      error: (error) => console.log(error),
-      complete: () => console.log('Request has been completed', this.users),
-    });
   }
 
   public setCurrentUser() {
@@ -32,17 +23,6 @@ export class HomePageComponent implements OnInit {
     if (!userString) return;
     const user: User = JSON.parse(userString);
     this.accountService.setCurrentUser(user);
-  }
-
-  registerMode = false;
-
-  public registerToggleFunction() {
-    this.registerMode = true;
-    console.log(this.registerMode)
-  }
-
-  public closeRegisterMode(event: boolean) {
-    this.registerMode = event;
   }
 
   goToLogin() {

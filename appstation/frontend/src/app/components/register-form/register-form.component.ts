@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component } from "@angular/core";
 import { WarningMessageType } from "src/app/models/enums/message-types.enum";
 import { AccountService } from "src/app/services/account.service";
 import { SnackBarService } from "src/app/services/snack-bar.service";
@@ -9,7 +9,6 @@ import { SnackBarService } from "src/app/services/snack-bar.service";
   styleUrls: ["./register-form.component.scss"],
 })
 export class RegisterFormComponent {
-  @Output() closeRegisterForm = new EventEmitter();
   model: any = {};
 
   constructor(private accountService: AccountService, private snackBarService: SnackBarService) {}
@@ -30,6 +29,5 @@ export class RegisterFormComponent {
   }
 
   cancel() {
-    this.closeRegisterForm.emit(false);
   }
 }

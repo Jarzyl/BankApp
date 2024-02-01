@@ -36,3 +36,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 7. Posiadanie nr konta oraz środków na nim
 8. Możliwość wykonywania przelewów
 9. Możliwość otrzymywania przelewów
+
+Pa$$w0rd

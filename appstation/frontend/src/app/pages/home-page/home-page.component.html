@@ -1,11 +1,24 @@
-<div class="container-home">
-  <p class="welcome-text">Welcome on your BankApp website!</p>
-  <div class="button-container" *ngIf="!(accountService.currentUser$ | async)">
-    <button (click)="(goToLogin)">
-      <a routerLink="login">Have account? Go to Login</a>
-    </button>
-    <button (click)="(goToRegister)">
-      <a routerLink="register">New user? Create an account</a>
-    </button>
+<section class="home-section">
+  <div class="container-home">
+    <div class="title-container">
+      <h1 class="title">Banking at your fingertips</h1>
+    </div>
+    <div class="text-container">
+      <h2 class="text">Experience the convenience of banking at your fingertips with our user-friendly banking services, allowing you to manage your finances anytime, anywhere with ease</h2>
+    </div>
+    <div
+      class="buttons-container"
+      *ngIf="!(accountService.currentUser$ | async)"
+    >
+      <button (click)="(goToLogin)" class="nav-btn-login">
+        <a routerLink="login">Have account? Go to Login</a>
+      </button>
+      <button (click)="(goToRegister)" class="nav-btn-sign">
+        <a routerLink="register">New user? Create an account</a>
+      </button>
+    </div>
+    <div class="image-container">
+      <img src="../../../assets/img/mock1.png" alt="Opis obrazka">
+    </div>
   </div>
-</div>
+</section>

@@ -1,5 +1,5 @@
 <div class="register-container">
-  <h2>Register</h2>
+  <p>Register</p>
   <form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
     <div class="form-group">
       <label for="username">Username</label>
@@ -53,8 +53,14 @@
         placeholder="Password"
       />
     </div>
-    <button type="submit">Register</button>
-    <button type="button" (click)="cancel()">Cancel</button>
+    <div class="buttons-container">
+      <button type="submit" class="btn-login">
+        <span>Register</span>
+      </button>
+      <button type="button" class="btn-login" (click)="cancel()">
+        <span>Cancel</span>
+      </button>
+    </div>
   </form>
   <p class="login-link">
     Already have an account? <a href="/login">Go to login</a>

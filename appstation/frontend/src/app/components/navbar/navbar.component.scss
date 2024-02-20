@@ -2,13 +2,25 @@
   background-color: #464444;
   color: white;
   padding: 20px;
+  min-width: 350px;
+
+  .navbar-container {
+    min-width: 300px;
+    .pages {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .pages {
+        display: flex;
+      }
+    }
+  }
 
   .login-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
 
     .welcome-container {
       display: flex;
@@ -21,6 +33,7 @@
       border-radius: 0.8rem;
       gap: 0.5rem;
       align-items: center;
+      cursor: pointer;
 
       .welcome-user {
         margin: 0 auto;
@@ -169,4 +182,17 @@
 
 .menu-content button:hover {
   background-color: #f0f0f0;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    width: calc(100% - 45px);
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-container {
+    max-width: 1350px;
+  }
 }

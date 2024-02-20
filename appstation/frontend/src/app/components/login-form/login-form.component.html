@@ -1,5 +1,5 @@
 <div class="login-container">
-  <h2>Login</h2>
+  <p>Sign in</p>
   <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
     <div class="form-group">
       <label for="username">Username</label>
@@ -21,12 +21,12 @@
         placeholder="Enter your password"
       />
     </div>
-    <button type="submit">Login</button>
+    <button type="submit" class="nav-btn-login">
+      <span>Login</span>
+    </button>
   </form>
   <div class="register-link">
-    <p>
-      Don't have an account yet?
-      <button><a href="/register">Go to register</a></button>
-    </p>
+    <p>Don't have an account yet?</p>
+    <button><a href="/register">Go to register</a></button>
   </div>
 </div>

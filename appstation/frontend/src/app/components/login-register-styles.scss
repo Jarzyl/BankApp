@@ -1,0 +1,152 @@
+.bg-page {
+  background-color: rgb(70, 97, 74);
+}
+
+.page-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  margin: 0 auto;
+  width: 300px;
+  padding-top: 40px;
+}
+
+.content-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  background: white;
+  border-radius: 1rem;
+
+  margin: 0 auto;
+}
+
+.left-container {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  justify-content: center;
+  display: grid;
+}
+
+.text-container {
+  height: 40px;
+  display: grid;
+  // gap: 1rem;
+  margin-top: 1rem;
+
+  p {
+    height: 20px;
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+  }
+}
+
+.login-left-container {
+  @extend .left-container;
+  background-image: url("../../assets/img/log.avif");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+
+  p {
+    margin-top: 4rem;
+    font-size: 1rem;
+    color: white;
+  }
+}
+
+.register-left-container {
+  @extend .left-container;
+  background-color: #333;
+  border-radius: 0.5rem;
+}
+
+.form-container {
+  width: 350px;
+  margin: 0 auto;
+  justify-content: center;
+  display: grid;
+}
+
+.title-container {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    width: 1500px;
+    padding-top: 0;
+    height: 100vh;
+  }
+  .content-container {
+    gap: 3rem;
+    width: 1300px;
+    display: flex;
+    height: 700px;
+  }
+
+  .page-container {
+    display: flex;
+  }
+
+  .login-left-container {
+    padding: 20px;
+    width: 700px;
+    height: 650px;
+
+    p {
+      font-size: 4rem;
+    }
+  }
+
+  .form-container {
+    width: 700px;
+  }
+
+  .register-left-container {
+    padding: 20px;
+    width: 700px;
+    height: 650px;
+  }
+  .text-container {
+    height: 100px;
+    p {
+      height: 40px;
+      font-size: 3rem;
+    }
+  }
+}
+
+.link-container {
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  a {
+    color: #333;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+}

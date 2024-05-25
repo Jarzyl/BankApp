@@ -1,0 +1,9 @@
+FROM node:lts
+WORKDIR /app/appstation/frontend
+
+COPY appstation/frontend/package.json appstation/frontend/yarn.lock appstation/frontend/.yarnrc.yml /app/appstation/frontend/
+RUN corepack enable && yarn set version stable && yarn
+
+COPY appstation/frontend/. ./
+
+RUN yarn lint

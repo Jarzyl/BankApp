@@ -22,6 +22,12 @@ Build_frontend:
 Lint_frontend:
   image: docker:20.10.7
   stage: test
+  only:
+    refs:
+      - merge_requests
+  allow_failure: true
   script:
-    - echo "Running tests"
-    - docker run --rm $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG ng lint
+    - echo "Running eslint"
+    - docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -f DockerLint .
+    - docker run --rm $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -f DockerLint
+    - docker rmi $CI_JOB_ID

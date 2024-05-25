@@ -1,0 +1,24 @@
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - echo "Logging into GitLab Docker registry"
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+Build_frontend:
+  image: docker:20.10.7
+  stage: build
+  script:
+    - echo "Building Docker image"
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -f DockerBuildFrontend .
+    - echo "Pushing Docker image to registry"
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+Lint_frontend:
+  image: docker:20.10.7
+  stage: test
+  script:
+    - echo "Running tests"
+    - docker run --rm $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG ng lint

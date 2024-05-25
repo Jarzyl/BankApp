@@ -1,0 +1,13 @@
+FROM node:20
+WORKDIR /app/appstation/frontend
+
+COPY appstation/frontend/package.json appstation/frontend/yarn.lock /app/appstation/frontend/
+RUN corepack enable && yarn set version stable
+
+RUN yarn
+
+COPY appstation/frontend/. ./
+
+RUN yarn build
+
+ENTRYPOINT ["sh", "-c", "cp -r /app/appstation/frontend/dist/. /Output"]

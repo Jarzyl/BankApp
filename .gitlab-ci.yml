@@ -3,6 +3,9 @@ stages:
   - test
   - deploy
 
+services:
+  - docker:dind
+
 before_script:
   - echo "Logging into GitLab Docker registry"
   - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"

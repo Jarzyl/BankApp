@@ -1,7 +1,7 @@
 FROM node:20
 WORKDIR /app/appstation/frontend
 
-COPY appstation/frontend/package.json appstation/frontend/yarn.lock /app/appstation/frontend/
+COPY appstation/frontend/package.json appstation/frontend/yarn.lock appstation/frontend/.yarnrc.yml /app/appstation/frontend/
 RUN corepack enable && yarn set version stable
 
 RUN yarn

@@ -243,7 +243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:~16.1.1":
+"@angular/cli@npm:16.1.8":
   version: 16.1.8
   resolution: "@angular/cli@npm:16.1.8"
   dependencies:
@@ -4220,7 +4220,7 @@ __metadata:
     "@angular-devkit/build-angular": "npm:^16.1.1"
     "@angular/animations": "npm:^16.1.0"
     "@angular/cdk": "npm:^16.2.13"
-    "@angular/cli": "npm:~16.1.1"
+    "@angular/cli": "npm:16.1.8"
     "@angular/common": "npm:^16.1.0"
     "@angular/compiler": "npm:^16.1.0"
     "@angular/compiler-cli": "npm:^16.1.0"

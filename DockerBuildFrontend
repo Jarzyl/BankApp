@@ -8,6 +8,6 @@ RUN yarn
 
 COPY appstation/frontend/. ./
 
-RUN yarn build --prod
+RUN yarn build
 
 ENTRYPOINT ["sh", "-c", "cp -r /app/appstation/frontend/dist/. /Output"]

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { User } from 'src/app/models/user';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -11,30 +9,51 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class NavbarComponent implements OnInit {
   public loggedIn: boolean = false;
-  // currentUser$: Observable<User | null> = of(null);
+  public username: string | undefined;
+  public isMenuVisible = false;
 
   constructor(public accountService: AccountService, private router: Router) {}
 
   ngOnInit(): void {
-    // this.getCurrentUser();
-    // this.currentUser$ = this.accountService.currentUser$;
+    this.getCurrentUser();
   }
 
-  editProfile() {
-    // Logika dla edycji profilu
-    console.log('Edit your profile');
+  public getCurrentUser(): void {
+    this.accountService.currentUser$.subscribe({
+      next: user => {
+        this.loggedIn = !!user;
+        this.username = user?.username ? user.username.charAt(0).toUpperCase() + user.username.slice(1) : '';
+
+      },
+      error: error => console.log(error)
+    });
   }
 
-  // getCurrentUser() {
-  //   this.accountService.currentUser$.subscribe({
-  //     next: user => this.loggedIn = !!user,
-  //     error: error => console.log(error)
-  //   });
-  // }
+  public toggleMenuVisibility(): void {
+    this.isMenuVisible = true;
+  }
 
-  logout() {
+  public editProfile(): void {
+    this.isMenuVisible = false;
+    this.router.navigateByUrl("data")
+  }
+
+  public visitDashboard(): void {
+    this.isMenuVisible = false;
+    this.router.navigateByUrl("dashboard")
+  }
+
+  public logout(): void {
     this.accountService.logOut();
-    console.log('Logout');
-    this.router.navigateByUrl("/")
+    this.isMenuVisible = false;
+    this.router.navigateByUrl("/");
+  }
+
+  public login(): void {
+    this.router.navigateByUrl("login");
+  }
+
+  public register(): void {
+    this.router.navigateByUrl("register");
   }
 }

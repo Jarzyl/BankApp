@@ -1,5 +1,10 @@
-<div class="login-container">
-  <h2>Login</h2>
+<div class="form-container">
+  <div class="welcome-container">
+    <p class="title">Welcome Back</p>
+    <p class="subtitle">
+      Enter your username and password to access your account
+    </p>
+  </div>
   <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
     <div class="form-group">
       <label for="username">Username</label>
@@ -21,9 +26,17 @@
         placeholder="Enter your password"
       />
     </div>
-    <button type="submit">Login</button>
+    <div class="second-container">
+      <div class="remember">
+        <input type="checkbox" name="" id="" />
+        <p>Remember me</p>
+      </div>
+      <div class="forgot">
+        <p>Forgot password</p>
+      </div>
+    </div>
+    <button type="submit" class="form-btn">
+      <span>Login</span>
+    </button>
   </form>
-  <!-- <p class="register-link">
-    Don't have an account yet? <button (click)="registerToggle()">Go to register</button>
-  </p> -->
 </div>

@@ -1,20 +1,24 @@
-
-<div class="container-home">
-    <p class="welcome-text">Welcome on your BankApp website! </p>
-
-<div *ngIf="!registerMode">
-    <app-login-form [registerToggle]="registerToggleFunction"></app-login-form>
-    <div class="register-link">
-        <p>Don't have an account yet? <button (click)="registerToggleFunction()">Go to register</button></p>
+<section class="home-section">
+  <div class="container-home">
+    <div class="title-container">
+      <h1 class="title">Banking at your fingertips</h1>
     </div>
-</div>
-<div *ngIf="registerMode">
-    <app-register-form (closeRegisterForm)="closeRegisterMode($event)"></app-register-form>
-</div>
-</div>
-
-<!-- <ul>
-    <li *ngFor="let user of users">
-        {{user.id}} + {{user.userName}}
-    </li>
-</ul> -->
+    <div class="text-container">
+      <h2 class="text">Experience the convenience of banking at your fingertips with our user-friendly banking services, allowing you to manage your finances anytime, anywhere with ease</h2>
+    </div>
+    <div
+      class="buttons-container"
+      *ngIf="!(accountService.currentUser$ | async)"
+    >
+      <button (click)="(goToLogin)" class="nav-btn-login">
+        <a routerLink="login">Have account? Go to Login</a>
+      </button>
+      <button (click)="(goToRegister)" class="nav-btn-sign">
+        <a routerLink="register">New user? Create an account</a>
+      </button>
+    </div>
+    <div class="image-container">
+      <img src="../../../assets/img/mock1.png" alt="Opis obrazka">
+    </div>
+  </div>
+</section>

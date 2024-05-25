@@ -1,22 +1,38 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <div class="logo">My App</div>
+    <div class="logo">Pay</div>
+    <div class="pages">
     <ul class="nav-list">
-      <li><a routerLink="" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About Us</a></li>
       <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-
+      <!-- <li><a routerLink="/errors" routerLinkActive="active">TestErrors</a></li> -->
     </ul>
-    <div class="login-icon" mat-button [matMenuTriggerFor]="profileMenu">
-      <p *ngIf="!(accountService.currentUser$ | async)"> Sign up or register </p>
-      <p *ngIf="accountService.currentUser$ | async">Your account</p>
-      <mat-icon>person</mat-icon>
-    
-      <mat-menu #profileMenu="matMenu" #aboveMenu="matMenu" yPosition="above">
-        <button mat-menu-item (click)="editProfile()"><a routerLink="data">Edit your profile</a></button>
-        <button mat-menu-item (click)="logout()">Logout</button>
-      </mat-menu>
+  </div>
+    <div class="login-icon" >
+      <div *ngIf="!(accountService.currentUser$ | async)" class="buttons-container">
+        <button class="nav-btn-login" (click)="login()">
+          <span>Login</span>
+        </button>
+        <button class="nav-btn-sign" (click)="register()">
+          <span>Sign up</span>
+        </button>
+      </div>
+      <div *ngIf="accountService.currentUser$ | async" (click)="toggleMenuVisibility()">
+        <div class="welcome-container">
+          <p class="welcome-user">Hello {{username}}</p>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </div>
     </div>
     
+      <div *ngIf="isMenuVisible" class="menu-content">
+        <button (click)="editProfile()">Edit your profile</button>
+        <button *ngIf="accountService.currentUser$ | async" (click)="visitDashboard()">Dashboard</button>
+        <button *ngIf="accountService.currentUser$ | async" (click)="logout()">Logout</button>
+        <button *ngIf="!(accountService.currentUser$ | async)" (click)="login()">Login</button>
+      </div>
+    </div>
+
   </div>
 </nav>

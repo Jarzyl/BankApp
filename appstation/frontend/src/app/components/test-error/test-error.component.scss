@@ -1,0 +1,14 @@
+.button-container {
+    display: flex;
+    gap: 2rem;
+    flex-direction:row;
+    justify-content: center;
+    margin: 3rem;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}

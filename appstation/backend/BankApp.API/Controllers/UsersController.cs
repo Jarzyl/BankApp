@@ -1,36 +1,36 @@
-﻿using BankApp.API.Data;
-using BankApp.API.Entities;
+﻿using AutoMapper;
+using BankApp.API.DTOs;
+using BankApp.API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BankApp.API.Controllers;
 
 [Authorize]
-public class UsersController: BaseApiController
+public class UsersController : BaseApiController
 {
-    private readonly DataContext _context;
+    private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
 
-    public UsersController(DataContext context) 
+    public UsersController(IUserRepository userRepository, IMapper mapper) 
     {
-        _context = context;
+        _userRepository = userRepository;
+        _mapper = mapper;
     }
-    [AllowAnonymous]
+
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+    public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
     {
-        var users = await _context.Users.ToListAsync();
+        var users = await _userRepository.GetMembersAsync();
 
-        return users;
+        return Ok(users);
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<AppUser>> GetUser(int id)
+    [HttpGet("{username}")]
+    public async Task<ActionResult<MemberDto>> GetUser(string username)
     {
-        var user = await _context.Users.FindAsync(id);
-
-        return user;
+        return await _userRepository.GetMemberAsync(username);
     }
 }

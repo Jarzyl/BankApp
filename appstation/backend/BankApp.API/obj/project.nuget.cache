@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zHGCSlStqrjsFGTz9h7jq9LPjtAtyjeLgKcTeciM8r5dbazys6V6fxmp2QlrRGjTldZgcakad65cYBVuipTbpA==",
+  "dgSpecHash": "Y4DWKCbTqAJFayC9YGvJ1SROQglUQZ1QYUvrlxFM+buaQg+AvKW0jIBJD3TdIzlQ6W+/fIJXK5rEUgvlBGTj6Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\barto\\BankApp\\appstation\\backend\\BankApp.API\\BankApp.API.csproj",
   "expectedPackageFiles": [

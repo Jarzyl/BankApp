@@ -35,3 +35,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 9. Możliwość otrzymywania przelewów
 
 Pa$$w0rd
+
+// yarn cy-op (opening cypress)

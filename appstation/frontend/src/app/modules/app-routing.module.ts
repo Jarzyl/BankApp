@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { UserPanelComponent } from './pages/user-panel/user-panel.component';
-import { AuthGuard } from './guards/auth.guard';
-import { TestErrorComponent } from './components/test-error/test-error.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { ServerErrorComponent } from './pages/server-error/server-error.component';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
-import { DefaultRouteGuard } from './guards/default-route.guard';
+import { HomePageComponent } from '../pages/home-page/home-page.component';
+import { AboutComponent } from '../pages/about/about.component';
+import { ContactComponent } from '../pages/contact/contact.component';
+import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import { UserPanelComponent } from '../pages/user-panel/user-panel.component';
+import { AuthGuard } from '../guards/auth.guard';
+import { TestErrorComponent } from '../components/test-error/test-error.component';
+import { LoginPageComponent } from '../components/login-page/login-page.component';
+import { ServerErrorComponent } from '../pages/server-error/server-error.component';
+import { RegisterPageComponent } from '../components/register-page/register-page.component';
+import { DefaultRouteGuard } from '../guards/default-route.guard';
 
 const routes: Routes = [
   // {path: '', component: HomePageComponent},

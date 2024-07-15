@@ -46,3 +46,4 @@ Thumbs.db
 .yarn
 dist
 package-lock.json
+.vscode

@@ -1,6 +1,6 @@
-describe('Login Form', () => {
+describe('Login Test', () => {
     beforeEach(() => {
-      cy.visit('/login'); // Assuming the login form is under the "/login" route
+      cy.visit('/login');
     });
   
     it('should not allow empty username or password', () => {
